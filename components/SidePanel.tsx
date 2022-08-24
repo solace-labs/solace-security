@@ -2,13 +2,13 @@ import Image from "next/image";
 import React, { FC, ReactNode } from "react";
 import logo from "../public/solace-icon.png";
 
-type NavItem = {
+type NavItemType = {
   name: string;
   route: string;
   icon: string;
 };
 
-const navItems: NavItem[] = [
+const navItems: NavItemType[] = [
   {
     name: "add a guardian",
     route: "add",
@@ -36,15 +36,15 @@ const SidePanel = () => {
 };
 
 type NavItemProps = {
-  children: ReactNode;
-  data: typeof navItems;
+  children?: ReactNode;
+  data: NavItemType;
 };
 
-const NavItem: FC<NavItemProps> = () => {
+const NavItem: FC<NavItemProps> = ({ data }) => {
   return (
     <div>
-      <div>icon</div>
-      <p className="">add a guardian</p>
+      <div>{data.icon}</div>
+      <p className="">{data.name}</p>
     </div>
   );
 };
