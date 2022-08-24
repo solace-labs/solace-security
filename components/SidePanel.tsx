@@ -1,20 +1,7 @@
 import Image from "next/image";
 import React, { FC, ReactNode } from "react";
 import logo from "../public/solace-icon.png";
-
-type NavItemType = {
-  name: string;
-  route: string;
-  icon: string;
-};
-
-const navItems: NavItemType[] = [
-  {
-    name: "add a guardian",
-    route: "add",
-    icon: "add",
-  },
-];
+import { navItems, NavItemType } from "../utils/nav-items";
 
 const SidePanel = () => {
   return (
@@ -23,7 +10,7 @@ const SidePanel = () => {
         <Image src={logo} alt="solace logo" width={40} height={40} />
         <h2 className="font-semibold text-2xl">solace</h2>
       </div>
-      <h2 className="text-2xl text-center md:text-3xl lg:text-4xl md:text-left">
+      <h2 className="text-2xl text-center md:text-3xl lg:text-4xl md:text-left mb-12">
         your security center
       </h2>
       <nav className="">
@@ -42,8 +29,8 @@ type NavItemProps = {
 
 const NavItem: FC<NavItemProps> = ({ data }) => {
   return (
-    <div>
-      <div>{data.icon}</div>
+    <div className="flex flex-row items-center justify-start gap-4 py-8 border-b border-b-gray-800 cursor-pointer">
+      <div className="h-6 w-6">{data.icon}</div>
       <p className="">{data.name}</p>
     </div>
   );
