@@ -1,20 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import RecoverWallet from "../components/RecoverWallet";
+import PhantomWallet from "../components/PhantomWallet";
 
-const Recover: NextPage = () => {
+const Phantom: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Recover a wallet</title>
+        <title>Phantom Recovery</title>
         <meta name="description" content="Solace Guardian Dashboard" />
         <link rel="icon" href="/solace-icon.png" />
       </Head>
       <div className="flex items-start justify-center h-full md:items-center">
-        <RecoverWallet />
+        <PhantomWallet />
       </div>
     </>
   );
 };
 
-export default Recover;
+export default Phantom;

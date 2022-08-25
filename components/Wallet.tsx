@@ -5,7 +5,8 @@ import {
 } from "@solana/wallet-adapter-react-ui";
 import React from "react";
 import type { FC, ReactNode } from "react";
-import { WalletType } from "./AddGuardian";
+import { WalletType } from "./RecoverWallet";
+import { useRouter } from "next/router";
 
 type Props = {
   children?: ReactNode;
@@ -13,22 +14,25 @@ type Props = {
 };
 
 const Wallet: FC<Props> = ({ data }) => {
+  const router = useRouter();
+  const handleWallet = () => {
+    router.push(data.route);
+  };
+
   return (
     <div className="flex flex-col items-center gap-2 cursor-pointer group">
-      <div className="w-32 h-32 transition-all rounded-full bg-solace-dark group-hover:shadow-2xl group-hover:shadow-gray-700">
+      <div
+        onClick={handleWallet}
+        className="flex items-center justify-center transition-all bg-black rounded-full w-36 h-36 bg-solace-dark group-hover:shadow-2xl group-hover:shadow-zinc-700">
         <Image
           src={data.logo}
           alt={data.name}
           objectFit="cover"
-          height={128}
-          width={128}
+          height={100}
+          width={100}
         />
       </div>
       <div className="text-xl font-semibold">{data.name}</div>
-      <div className="flex flex-row gap-4">
-        <WalletMultiButton />
-        <WalletDisconnectButton />
-      </div>
     </div>
   );
 };
