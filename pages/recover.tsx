@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import ComingSoon from "../components/ComingSoon";
 
 const Recover: NextPage = () => {
   return (
@@ -9,8 +10,8 @@ const Recover: NextPage = () => {
         <meta name="description" content="Solace Guardian Dashboard" />
         <link rel="icon" href="/solace-icon.png" />
       </Head>
-      <div className="flex items-start md:items-center justify-center h-full">
-        <h1 className="text-4xl">recover</h1>
+      <div className="flex items-start justify-center h-full md:items-center">
+        <ComingSoon />
       </div>
     </>
   );
