@@ -3,25 +3,22 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import {
-  WalletModalProvider,
-  WalletMultiButton,
-} from "@solana/wallet-adapter-react-ui";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   FakeWalletAdapter,
   PhantomWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
-import type { FC } from "react";
 import React, { useMemo } from "react";
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
+
 import BaseLayout from "../components/BaseLayout";
-require("@solana/wallet-adapter-react-ui/styles.css");
+import "../styles/globals.css";
+import "@solana/wallet-adapter-react-ui/styles.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = WalletAdapterNetwork.Devnet;
+  const network = WalletAdapterNetwork.Testnet;
 
   // You can also provide a custom RPC endpoint
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
@@ -37,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
        * your users connect to will be loaded.
        */
       new PhantomWalletAdapter(),
-      // new FakeWalletAdapter(),
+      new FakeWalletAdapter(),
     ],
     []
   );
@@ -47,7 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <BaseLayout>
-            <WalletMultiButton />
             <Component {...pageProps} />
           </BaseLayout>
         </WalletModalProvider>

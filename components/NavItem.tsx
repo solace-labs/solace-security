@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { NavItemType } from "../utils/nav-items";
 
 type NavItemProps = {

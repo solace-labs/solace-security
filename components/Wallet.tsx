@@ -3,7 +3,8 @@ import {
   WalletDisconnectButton,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-import React, { FC, ReactElement, ReactNode } from "react";
+import React from "react";
+import type { FC, ReactNode } from "react";
 import { WalletType } from "./AddGuardian";
 
 type Props = {
