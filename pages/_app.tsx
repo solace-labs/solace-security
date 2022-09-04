@@ -5,7 +5,7 @@ import {
 } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
-  FakeWalletAdapter,
+  // FakeWalletAdapter,
   PhantomWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -15,6 +15,10 @@ import type { AppProps } from "next/app";
 import BaseLayout from "../components/BaseLayout";
 import "../styles/globals.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+// @ts-ignore
+global.Buffer = Buffer;
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
@@ -34,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
        * your users connect to will be loaded.
        */
       new PhantomWalletAdapter(),
-      new FakeWalletAdapter(),
+      // new FakeWalletAdapter(),
     ],
     []
   );
@@ -43,6 +47,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
+          <ToastContainer
+            position="top-right"
+            autoClose={4000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnHover
+            theme="dark"
+          />
           <BaseLayout>
             <Component {...pageProps} />
           </BaseLayout>
