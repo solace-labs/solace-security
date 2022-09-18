@@ -14,6 +14,11 @@ export const navItems: NavItemType[] = [
     icon: Icons.recover,
   },
   {
+    name: "approve a tansaction",
+    route: "approve",
+    icon: Icons.approve,
+  },
+  {
     name: "add a guardian",
     route: "add",
     icon: Icons.add,
@@ -32,10 +37,5 @@ export const navItems: NavItemType[] = [
     name: "cancel wallet recovery",
     route: "cancel",
     icon: Icons.cancel,
-  },
-  {
-    name: "approve a tansaction",
-    route: "approve",
-    icon: Icons.approve,
   },
 ];

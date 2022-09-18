@@ -15,7 +15,7 @@ export const PROGRAM_ADDRESS = "8FRYfiEcSPFuJd27jkKaPBwFCiXDFYrnfwqgH9JFjS2U";
 const PhantomWallet = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
-  const [solaceName, setSolaceName] = useState("username555");
+  const [solaceName, setSolaceName] = useState("");
   const [loading, setLoading] = useState(false);
 
   // const onClick = useCallback(async () => {
@@ -91,7 +91,9 @@ const PhantomWallet = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-16">
-      <div className="text-3xl font-normal">recover a wallet with phantom</div>
+      <div className="text-2xl md:text-3xl font-normal text-center">
+        recover a wallet with phantom
+      </div>
       <div className="flex flex-col items-center justify-center w-full gap-2">
         {/* <label htmlFor="username">solace username</label> */}
         <input

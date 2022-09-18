@@ -11,7 +11,9 @@ export type WalletType = typeof wallets[number];
 const RecoverWallet = () => {
   return (
     <div className="flex flex-col items-center gap-8">
-      <h3 className="text-3xl font-semibold">recover a wallet with phanatom</h3>
+      <h3 className="text-2xl md:text-3xl font-semibold text-center">
+        recover a wallet
+      </h3>
       <p className="text-lg font-light">choose your guardian</p>
       {wallets.map((wallet) => (
         <Wallet key={wallet.name} data={wallet} />

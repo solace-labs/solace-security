@@ -18,6 +18,7 @@ const SidePanel = () => {
       <h2 className="mb-12 text-2xl text-center md:text-3xl lg:text-4xl md:text-left">
         secure your wallet
       </h2>
+
       <nav className="">
         {navItems.map((navItem) => {
           return <NavItem key={navItem.route} data={navItem} />;
