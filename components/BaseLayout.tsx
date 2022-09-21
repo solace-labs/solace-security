@@ -18,7 +18,9 @@ const BaseLayout: FC<Props> = ({ children }) => {
           <MobileNav />
         </div>
       </div>
-      <div className="p-8 grow bg-main text-zinc-200 md:p-16">{children}</div>
+      <div className="p-8 grow bg-main text-zinc-200 md:p-16 flex items-center justify-center">
+        {children}
+      </div>
     </div>
   );
 };
