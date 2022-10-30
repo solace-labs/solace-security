@@ -23,13 +23,15 @@ const Wallet: FC<Props> = ({ data }) => {
     <div className="flex flex-col items-center gap-2 cursor-pointer group">
       <div
         onClick={handleWallet}
-        className="flex items-center justify-center transition-all bg-black rounded-full w-36 h-36 bg-solace-dark group-hover:shadow-2xl group-hover:shadow-zinc-700">
+        className="relative flex items-center justify-center overflow-hidden transition-all bg-black rounded-full w-36 h-36 bg-solace-dark group-hover:shadow-2xl group-hover:shadow-zinc-700">
         <Image
           src={data.logo}
           alt={data.name}
-          objectFit="cover"
-          height={100}
-          width={100}
+          layout="fill"
+          className="scale-110 translate-y-1"
+          objectFit="contain"
+          // height={100}
+          // width={100}
         />
       </div>
       <div className="text-xl font-semibold">{data.name}</div>

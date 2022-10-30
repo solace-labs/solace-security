@@ -31,7 +31,7 @@
     "react-dom": "18.2.0",
     "react-toastify": "^9.0.8",
     "snake-case": "^3.0.4",
-    "solace-sdk": "^2.0.9",
+    "solace-sdk": "^2.0.25",
     "toml": "^3.0.0"
   },
   "devDependencies": {
