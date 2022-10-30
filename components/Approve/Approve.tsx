@@ -176,18 +176,27 @@ const Approve = () => {
               mint,
               senderTokenAccount,
             } = transfer;
+            console.log(mint, senderTokenAccount);
             return (
               <div
                 className="flex flex-row items-center justify-between py-4 border-t border-zinc-700"
                 key={seedKey.toString()}>
                 <div className="flex flex-col">
-                  <p className="font-semibold">{minifyAddress(mint, 4)}</p>
-                  <p className="text-lg">{amount / LAMPORTS_PER_SOL}</p>
+                  <p className="font-semibold">
+                    {mint ? minifyAddress(mint!, 4) : "SOL"}
+                  </p>
+                  <p className="text-lg text-blue-400">
+                    {amount / LAMPORTS_PER_SOL}
+                  </p>
                 </div>
-                <p>
+                <p className="text-sm font-semibold text-orange-400">
                   {totalApprovals}/{threshold} approvals
                 </p>
-                <p>{minifyAddress(senderTokenAccount, 4)}</p>
+                <p className="text-sm">
+                  {senderTokenAccount
+                    ? `${minifyAddress(senderTokenAccount, 4)} (${solaceName})`
+                    : solaceName}
+                </p>
                 <button
                   disabled={solaceName.trim() === ""}
                   onClick={() => {

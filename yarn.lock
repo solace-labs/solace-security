@@ -8201,10 +8201,10 @@
     "@socket.io/component-emitter" "~3.1.0"
     "debug" "~4.3.1"
 
-"solace-sdk@^2.0.25":
-  "integrity" "sha512-8Eo97HX61/GEPaNIBxeaBWJOqI+jP1JDaLMcD92PasEzcALTUXdE5HXatznYxS6rS5ba40rBFFNWpwvAkgmXQw=="
-  "resolved" "https://registry.npmjs.org/solace-sdk/-/solace-sdk-2.0.25.tgz"
-  "version" "2.0.25"
+"solace-sdk@^2.0.27":
+  "integrity" "sha512-OpSAHRumAXC/rkCfBMKYuJDE/VliL7aC88eOAlcYeCEEsv7gYsceezywkAIqw0TGzMFuXDpg/WSM/0FkOxP0jQ=="
+  "resolved" "https://registry.npmjs.org/solace-sdk/-/solace-sdk-2.0.27.tgz"
+  "version" "2.0.27"
   dependencies:
     "@solana/spl-token" "^0.3.4"
     "anchor-rn" "^0.18.2"
